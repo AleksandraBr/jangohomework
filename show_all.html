@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<img src="https://get.wallhere.com/photo/Solar-System-Venus-Neptune-Mercury-Jupiter-Saturn-Uranus-Earth-Mars-Pluto-Milky-Way-1882545.jpg" alt="Фото планет" width="1300" height="200">
+<h2 align="center"> Планеты </h2>
+
+<ul>
+    {%for s in objects_array%}
+    <li>
+        <h5> {{s.title}}</h5>
+        <p> {{s.info}} </p>
+        <h6> <a href="{% url 'myapp:get_sign_one' s.id %}"> <span class="badge text-bg-dark"> <font color="#ffffff"> Подробнее о планете {{s.title}} </font> </span> </a> </h6>
+    </li>
+{% endfor %}
+</ul>
+<h3 align="center"> Итоговое количество планет:</h3>
+<ol>
+    <li> Меркурий </li>
+    <li> Венера </li>
+    <li> Земля </li>
+    <li> Марс </li>
+    <li> Юпитер </li>
+    <li> Сатурн </li>
+    <li> Уран </li>
+    <li> Нептун </li>
+</ol>
+<a href="https://externat.foxford.ru/polezno-znat/wiki-astronomiya-solnechnaya-sistema" target="_blank"> <button type="button" class="btn btn-outline-dark"> <font color="#170000"> <h5> <b> Читать далее </b> </h5> </font> </button> </a>
+{% endblock %}

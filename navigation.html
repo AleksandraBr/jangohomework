@@ -1,0 +1,32 @@
+<div style="background-color:#ffffff">
+<ul class="nav nav-pills">
+  <li class="nav-item">
+     <a
+         {% if request.path == "/show_all/" %}
+            class ='nav-link active' aria-current="show_all"
+         {% else %}
+            class ='nav-link'
+         {% endif %}
+       href="{% url "myapp:signs" %}" >
+       <h4 style="color:#0a0720"> Planets </h4>  </a>
+  </li>
+
+  <li class="nav-item">
+    <a {% if request.path == "/task/" %}
+      class ='nav-link active' aria-current="task"
+      {% else %}
+      class ='nav-link'
+      {% endif %}
+      href="{% url "myapp:task" %}" > <h4 style="color:#0a0720"> Task </h4> </a>
+  </li>
+
+  <li class="nav-item">
+    <a {% if request.path == "/form/" %}
+      class ='nav-link active' aria-current="form"
+      {% else %}
+      class ='nav-link'
+      {% endif %}
+       href="{% url "myapp:form" %}" > <h4 style="color:#0a0720"> About me </h4> </a>
+  </li>
+</ul>
+</div>

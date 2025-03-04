@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+{%if error == ''%}
+
+<h2 align="center"> {{cur_sign.title}} </h2>
+<p> {{cur_sign.all_info}} </p>
+<center> <img src = '{{cur_sign.img}}' width='400px'> </center>
+{%else%}
+<h1> {{error}} </h1>
+{%endif%}
+{% endblock %}

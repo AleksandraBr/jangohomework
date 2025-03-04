@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h2 align="center">Картины, которые Митя может купить</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="paintings">Картины (название и цена через запятую и тире):</label><br>
+        <textarea name="paintings" rows="5" cols="40" required></textarea><br>
+        <button type="submit">Проверить</button>
+    </form>
+<h2 align="center">Картины, которые можно купить:</h2>
+    <p align="center">{{ result }}</p>
+    <a href="{% url 'myapp:task' %}">Сброс</a>
+{% endblock %}
